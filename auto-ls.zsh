@@ -1,10 +1,6 @@
 # vim: sw=2 ts=2 et!
-_auto_ls_should_display() {
-  test -n "$(find . -type f -not -name .DS_Store)"
-}
-
 auto-ls () {
-  if [[ $#BUFFER -eq 0 ]] && _auto_ls_should_display; then
+  if [[ $#BUFFER -eq 0 ]]; then
     zle && echo ""
     exa
     echo ""
