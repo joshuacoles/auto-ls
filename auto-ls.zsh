@@ -2,10 +2,11 @@
 auto-ls () {
   if [[ $#BUFFER -eq 0 ]]; then
     zle && echo ""
-    ls
+    exa
     echo ""
+    
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == true ]]; then
-      git status
+      git status -s
     fi
 
     zle && zle redisplay
